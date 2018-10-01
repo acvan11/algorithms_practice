@@ -3,7 +3,6 @@ class Node:
 		self.data = data
 		self.next = None
 
-
 class LinkedList:
 	def __init__(self):
 		self.head = None
@@ -13,10 +12,10 @@ class LinkedList:
 		return size
 
 	def insertFront(self,data):
-		temp = self.head
+		currentNode = self.head
 		newNode = Node(data)
 		self.head = newNode
-		newNode.next = temp
+		newNode.next = currentNode
 		self.size += 1
 
 	def insertEnd(self, data):
@@ -45,11 +44,45 @@ class LinkedList:
 			if currentPosition == pos:
 				previousNode.next = new_Node
 				new_Node.next = currentNode
+				self.size += 1
 				break
 			previousNode = currentNode
 			currentNode = currentNode.next
 			currentPosition += 1
-		self.size += 1
+	
+	def deleteLastNode(self):
+		currentNode = self.head
+		if self.size == 1:
+			self.head = None
+		else:
+			while currentNode.next is not None:
+				previousNode = currentNode
+				currentNode = currentNode.next
+			previousNode.next = None
+		self.size -= 1
+
+	def deleteFirstNode(self):
+		currentNode = self.head
+		if self.size == 1:
+			self.head = None
+		else:
+			self.head = self.head.next
+		self.size -= 1
+
+	def deleteNodeAt(self, pos):
+		if pos == 0:
+			self.deleteFirstNode()
+		elif pos == self.size - 1:
+			self.deleteLastNode()
+		else:
+			currentNode = self.head
+			position = 0
+			while not position == pos:
+				previousNode = currentNode
+				currentNode = currentNode.next
+				position += 1
+			previousNode.next = currentNode.next
+			self.size -= 1
 
 	def printList(self):
 		list = []
@@ -59,6 +92,13 @@ class LinkedList:
 			currentNode = currentNode.next
 		print(list)
 
+	def valueAt(self, pos):
+		currentNode = self.head
+		position = 0
+		while not position == pos:
+			currentNode = currentNode.next
+			position += 1
+		return currentNode.data
 
 newLL = LinkedList()
 newLL.insertEnd(3)
@@ -70,4 +110,7 @@ newLL.insertAt(100,1)
 newLL.insertAt(200,0)
 newLL.insertAt(500,7)
 newLL.insertAt(500,90)
-newLL.printList() 
+newLL.printList()
+newLL.deleteNodeAt(3)
+newLL.printList()
+
