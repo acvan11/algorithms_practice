@@ -19,3 +19,10 @@ def merge(arr1, arr2):
       results.append(arr2.pop(0))
 
   return results + arr1 + arr2
+
+# Actually run this code with an example
+my_arr = [4, 1, 2, 5, 2, 1, 10, 31, 4, 13, 11, 7, 18, 10, 19, 5, 7, 6, 3, 16, 14, 21, 12, 22, 26, 31, 30, 25, 17]
+sorted = merge_sort(my_arr)
+
+print('ORIGIN: ', my_arr)
+print('RESULT: ', sorted)
