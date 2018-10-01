@@ -8,9 +8,6 @@ class LinkedList:
 		self.head = None
 		self.size = 0
 
-	def size(self):
-		return size
-
 	def insertFront(self,data):
 		currentNode = self.head
 		newNode = Node(data)
@@ -100,17 +97,8 @@ class LinkedList:
 			position += 1
 		return currentNode.data
 
-newLL = LinkedList()
-newLL.insertEnd(3)
-newLL.insertEnd(6)
-newLL.insertEnd(4)
-newLL.insertEnd(1)
-newLL.insertAt(22,2)
-newLL.insertAt(100,1)
-newLL.insertAt(200,0)
-newLL.insertAt(500,7)
-newLL.insertAt(500,90)
-newLL.printList()
-newLL.deleteNodeAt(3)
-newLL.printList()
+	def create(self,arr):
+		for i in arr:
+			self.insertEnd(i)
+
 
