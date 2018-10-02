@@ -3,4 +3,5 @@ def checkSub(str, sub):
 		return True
 	return False
 
+def 
 print(checkSub('abcabcd', 'ab'))
