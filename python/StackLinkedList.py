@@ -8,7 +8,6 @@ class StackLinkedList:
 		self.top = None
 		self.size = 0
 
-
 	def push(self, data):
 		lastNode = Node(data)
 		if self.size == 0:
