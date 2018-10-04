@@ -23,6 +23,17 @@ class SudokuBoard():
 		column_start = position % 9
 		return self.board[column_start: len(self.board): 9]
 
+	def get_box(self, position):
+		box_col = ((position % 9) // 3) * 3
+		box_row = (position // 27) * 3
+		box_nums = []
+
+		for i in range(box_col, box_col+3):
+			for j in range(box_row, box_row + 3):
+				box_nums.append(self.board[i * 9 + j])
+
+		return box_nums
+
 
 
 
@@ -36,3 +47,6 @@ print(board1.get_horizontal(23))
 
 print('vertical of 25 is: ')
 print(board1.get_vertical(25))
+
+print('box of position 34 is: ')
+print(board1.get_box(34))
