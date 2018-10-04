@@ -15,6 +15,10 @@ class SudokuBoard():
 					temp += ' '
 			print(temp)
 
+	def get_horizontal(self, position):
+		row_start = (position // 9)* 9
+		return self.board[row_start:row_start+9]
+
 
 
 
@@ -22,3 +26,5 @@ test_board1 = '61903004027006100800004762148630207900001458003100906000572080632
 
 board1 = SudokuBoard(test_board1)
 board1.print_board()
+print('horizontal of 23 is: ')
+print(board1.get_horizontal(23))
