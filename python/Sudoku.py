@@ -196,7 +196,6 @@ def main():
     SudokuBoard[8][8] = 0
     printBoard(SudokuBoard)
     sudokuSolver(SudokuBoard)
-    #file.close()
     
 if __name__ == "__main__":
     main()
