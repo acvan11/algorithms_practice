@@ -34,6 +34,22 @@ class SudokuBoard():
 
 		return box_nums
 
+	def check_solved(self):
+		if '0' in self.board:
+			return False
+		return True
+
+	def solve(self):
+		has_changed = True
+
+		while has_changed:
+			has_changed = False
+
+			for position in range(len(self.board)):
+				if self.board[position] == '0':
+					# Get the numbers
+					# Find the numbers that missing
+					# If there is only one num missing, fill it in
 
 
 
