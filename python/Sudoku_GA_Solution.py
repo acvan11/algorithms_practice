@@ -28,8 +28,8 @@ class SudokuBoard():
 		box_row = (position // 27) * 3
 		box_nums = []
 
-		for i in range(box_col, box_col+3):
-			for j in range(box_row, box_row + 3):
+		for i in range(box_row, box_row+3):
+			for j in range(box_col, box_col + 3):
 				box_nums.append(self.board[i * 9 + j])
 
 		return box_nums
