@@ -19,6 +19,11 @@ class SudokuBoard():
 		row_start = (position // 9)* 9
 		return self.board[row_start:row_start+9]
 
+	def get_vertical(self, position):
+		column_start = position % 9
+		return self.board[column_start: len(self.board): 9]
+
+
 
 
 
@@ -28,3 +33,6 @@ board1 = SudokuBoard(test_board1)
 board1.print_board()
 print('horizontal of 23 is: ')
 print(board1.get_horizontal(23))
+
+print('vertical of 25 is: ')
+print(board1.get_vertical(25))
