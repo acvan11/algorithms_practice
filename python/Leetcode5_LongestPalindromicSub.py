@@ -16,7 +16,7 @@ def PalindromeCheck(str):
 def longestPalindromicSub(str):
 	longest = 0
 	result = ''
-	for i in range(len(str)):
+	for i in range(len(str)-1):
 		count = 1
 		for j in range(i+1, len(str)):
 			if str[i] == str[j]:
@@ -28,4 +28,4 @@ def longestPalindromicSub(str):
 			count += 1
 	return result
 
-print(longestPalindromicSub('cbbd'))
+print(longestPalindromicSub('babad'))
