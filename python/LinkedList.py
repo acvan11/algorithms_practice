@@ -82,12 +82,13 @@ class LinkedList:
 			self.size -= 1
 
 	def printList(self):
-		list = []
-		currentNode = self.head
-		while currentNode != None:
-			list.append(currentNode.data)
-			currentNode = currentNode.next
-		print(list)
+		result = ''
+		temp = self.head
+		while temp.next != None:
+			result += str(temp.data) + '->'
+			temp = temp.next
+		result += str(temp.data) 
+		print(result)
 
 	def valueAt(self, pos):
 		currentNode = self.head
@@ -101,4 +102,10 @@ class LinkedList:
 		for i in arr:
 			self.insertEnd(i)
 
-
+newLL = LinkedList()
+newLL.insertEnd(3)
+newLL.printList()
+newLL.insertEnd(2)
+newLL.printList()
+newLL.insertEnd(4)
+newLL.printList()
