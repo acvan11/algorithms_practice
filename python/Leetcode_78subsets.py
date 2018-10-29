@@ -5,4 +5,4 @@ def subset(arr):
 		for j in range(i,len(arr)):
 			result.append(arr[i:j+1])
 	return result
-print(subset([1,2,3]))
+print(subset([1,2,3,4]))
