@@ -8,12 +8,12 @@ def reve(arr):
 		else:
 			result += arr2[::-1] + [' ']
 			arr2 = []
-	result += arr2[::-1]
+	# result += arr2[::-1]
 	return result
 
 arr = ['p', 'e', 'r', 'f', 'e', 'c', 't', ' ',
                 'm', 'a', 'k', 'e', 's', ' ',
-                'p', 'r', 'a', 'c', 't', 'i', 'c', 'e'
+                'p', 'r', 'a', 'c', 't', 'i', 'c', 'e', ' '
                ]
 
 print(reve(arr))
