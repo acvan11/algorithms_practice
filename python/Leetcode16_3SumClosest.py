@@ -7,13 +7,23 @@ def sum3Closest(arr, target):
 	result = []
 	closest = max(arr) * 3
 	temp = 0
+	arr.sort()
+	print('arr= ',arr)
 	for i in range(len(arr)-2):
-		for j in range(i+1, len(arr)-1):
-			for k in range(j+1, len(arr)):
-				temp = arr[i] + arr[j] + arr[k]
-				if abs(temp - target) < closest:
-					result = [arr[i], arr[j], arr[k]]
-					closest = abs(temp - target)
+		target2 = target - arr[i]
+		low = i + 1
+		high = len(arr)-1
+		print(target2)
+		while low < high:
+			count = arr[low] + arr[high]
+			print('count = ',count)
+			if arr[low] + arr[high] < target2:
+				low +=1
+			elif (arr[low] + arr[high] > target2):
+				high -=1
+			else:
+				result = [arr[i], arr[low], arr[high]]
+				break
 	print(result)
 
-sum3Closest([-1, 2, 1, -4], 1)
+sum3Closest([-1, 2, 1, -4], 2)
