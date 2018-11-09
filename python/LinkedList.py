@@ -102,10 +102,28 @@ class LinkedList:
 		for i in arr:
 			self.insertEnd(i)
 
-newLL = LinkedList()
-newLL.insertEnd(3)
-newLL.printList()
-newLL.insertEnd(2)
-newLL.printList()
-newLL.insertEnd(4)
-newLL.printList()
+def merge(h1, h2):
+	temp = None
+	if h1 == None:
+		return h2
+	if h2 == None:
+		return h1
+	if h1.data < h2.data:
+		temp = h1
+		temp.next = merge(h1.next,h2)
+	else:
+		temp = h2
+		temp.next = merge(h1,h2.next)
+	return temp
+
+
+h1 = LinkedList()
+h1.insertEnd(2)
+h1.insertEnd(5)
+h2 = LinkedList()
+h2.insertEnd(3)
+h2.insertEnd(4)
+h3 = LinkedList()
+h3.head = merge(h1.head, h2.head)
+h3.printList()
+
