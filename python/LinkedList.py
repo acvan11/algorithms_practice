@@ -81,6 +81,20 @@ class LinkedList:
 			previousNode.next = currentNode.next
 			self.size -= 1
 
+	def deleteVal(self,val):
+		count = 0
+		temp = self.head
+		while temp != None:
+			if temp.data != val:
+				pre = temp
+				temp = temp.next
+			else:
+				pre.next = temp.next
+				temp2 = temp
+				temp = temp.next
+				temp2 = None
+				self.size -= 1
+
 	def printList(self):
 		result = ''
 		temp = self.head
@@ -117,13 +131,14 @@ def merge(h1, h2):
 	return temp
 
 
-h1 = LinkedList()
-h1.insertEnd(2)
-h1.insertEnd(5)
-h2 = LinkedList()
-h2.insertEnd(3)
-h2.insertEnd(4)
-h3 = LinkedList()
-h3.head = merge(h1.head, h2.head)
-h3.printList()
+ll = LinkedList()
+ll.insertEnd(1)
+ll.insertEnd(2)
+ll.insertEnd(3)
+ll.insertEnd(2)
+ll.insertEnd(3)
+ll.insertEnd(2)
+ll.printList()
+ll.deleteVal(2)
+ll.printList()
 
